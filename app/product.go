@@ -16,7 +16,7 @@ type ProductInterface interface {
 	Disable() error
 	GetID() string
 	GetName() string
-	GetStatus() string
+	GetStatus() int8
 	GetPrice() float32
 }
 
@@ -49,7 +49,7 @@ type Product struct {
 	ID     string  `valid:"uuidv4"`
 	Name   string  `valid:"required"`
 	Price  float32 `valid:"float,optional"`
-	Status int8    `valid:"required"`
+	Status int8    `valid:"int,optional"`
 }
 
 func NewProduct() *Product {
